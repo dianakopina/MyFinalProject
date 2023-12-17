@@ -44,18 +44,20 @@ public class HomePage {
         WebElement loginField = getCurrentDriver().findElement(By.xpath(loginFieldXpath));
         ((JavascriptExecutor) getCurrentDriver()).executeScript("arguments[0].scrollIntoView(true);", loginField);
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        WebDriverWait wait = new WebDriverWait(getCurrentDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(loginField));
+
+        loginField.sendKeys(login);
 
         WebElement passwordField = getCurrentDriver().findElement(By.xpath(passwordFieldXpath));
         WebElement loginButton = getCurrentDriver().findElement(By.xpath(loginButtonHref));
 
-        loginField.sendKeys(login);
         passwordField.sendKeys(password);
+
+        wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+
         loginButton.click();
+
     }
 
 
@@ -65,7 +67,7 @@ public class HomePage {
         WebDriverWait wait = new WebDriverWait(getCurrentDriver(), Duration.ofSeconds(10));
         WebElement copyrightElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='copyright']")));
         js.executeScript("arguments[0].scrollIntoView();", getCurrentDriver().findElement(By.xpath("//div[@class='copyright']")));
-        Thread.sleep(1000);
+
         WebElement careerButton = getCurrentDriver().findElement(By.xpath("//a[@href='https://www.littlewonderland.nl/en/service/vacatures/']"));
         careerButton.click();
 
