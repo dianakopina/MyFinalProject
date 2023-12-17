@@ -14,7 +14,6 @@ public class UserProfilePage{
 
     String userProfilePageUrlContains = "account";
 
-
     public boolean isUserProfilePageOpened() {
         return getCurrentDriver().getCurrentUrl().contains(userProfilePageUrlContains);
     }

@@ -27,11 +27,8 @@ public class HomePage {
     String password = "Ikki1234!";
 
 
-    //Click Profile for sign in
-    public void clickProfileIcon() {
 
-//        WebDriverWait wait = new WebDriverWait(getCurrentDriver(), Duration.ofSeconds(10));
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ProfileIcon)));
+    public void clickProfileIcon() {
 
         WebElement userProfileIcon = getCurrentDriver().findElement(By.xpath(ProfileIcon));
         userProfileIcon.click();
@@ -39,16 +36,12 @@ public class HomePage {
 
     public void clickLoggedProfileIcon() {
 
-//        WebDriverWait wait = new WebDriverWait(getCurrentDriver(), Duration.ofSeconds(10));
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LoggedProfileIcon)));
-
         WebElement userProfileIcon = getCurrentDriver().findElement(By.xpath(LoggedProfileIcon));
         userProfileIcon.click();
     }
 
     public void login() {
         WebElement loginField = getCurrentDriver().findElement(By.xpath(loginFieldXpath));
-//        wait.until(ExpectedConditions.visibilityOf(loginField));
         ((JavascriptExecutor) getCurrentDriver()).executeScript("arguments[0].scrollIntoView(true);", loginField);
 
         try {
@@ -65,15 +58,6 @@ public class HomePage {
         loginButton.click();
     }
 
-    public Boolean isOpen(){
-        WebElement productGlideAdds =  getCurrentDriver().findElement(By.className("headline-outer-wrap"));
-
-        if (productGlideAdds.isDisplayed()) return true;
-
-        else
-            return false;
-
-    }
 
     public void openCareerPage() throws InterruptedException {
 
