@@ -3,10 +3,7 @@ package utils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 
-import java.time.Duration;
 
 public class DriverProvider {
     static WebDriver driver;
@@ -28,6 +25,5 @@ public class DriverProvider {
         WebDriverManager.chromedriver().setup();
         driver= new FirefoxDriver();
     }
-
 
 }

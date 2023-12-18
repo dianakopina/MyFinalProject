@@ -5,7 +5,7 @@ import pages.HomePage;
 import pages.UserProfilePage;
 import utils.AssertProvider;
 
-import static java.lang.Thread.sleep;
+
 
 public class SuccessfulLoginTest extends BaseTest {
 
@@ -21,6 +21,5 @@ public class SuccessfulLoginTest extends BaseTest {
         UserProfilePage userProfilePage = new UserProfilePage();
 
         AssertProvider.assertTrue(userProfilePage.isUserProfilePageOpened(), "Login was unsuccessful");
-
     }
 }

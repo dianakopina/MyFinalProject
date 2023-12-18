@@ -8,5 +8,4 @@ public class AssertProvider {
         Assert.assertTrue(condition, message);
     }
 
-
 }
